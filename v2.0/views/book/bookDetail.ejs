@@ -1,0 +1,27 @@
+<%include ../partials/header%>
+    <div class="container">
+        <table class="table">
+            <tr>
+                <th>Image</th>
+                <th>Detail</th>
+            </tr>
+            <tr>
+                <td>
+                        <img src="<%=librarians.image%>" class="thumbnail" style="width:100%;max-width:300px">
+                </td>
+                <td>
+                    <h3><%=librarians.name%></h3>
+                    <h5>Authors     : <%=librarians.author%></h5>
+                    <h5>Edition     : <%=librarians.edition%></h5>
+                    <h5>Publisher   : <%=librarians.publisher%></h5>
+                </td>
+            </tr>
+                
+        </table>
+        <% librarians.reviews.forEach(function(review){ %>
+            <p>
+                <strong> <%= review.author %> </strong> - <%= review.text %>
+            </p>
+        <% }) %>
+    </div>
+<%include ../partials/footer%>

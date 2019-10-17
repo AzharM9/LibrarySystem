@@ -1,0 +1,28 @@
+<%include partials/header%>
+        <div class="container">
+            <div class="jumbotron">
+                <h1>Welcome To Librarian</h1>
+                <p>A Library System</p>
+                <p><a class="btn btn-primary btn-lg" href="/book/new" role="button">Add New Book</a></p>
+            </div>
+        </div>
+        
+        <div class="container">
+        <div class="row text-center" style="display:flex; flex-wrap: wrap;">
+        <% librarians.forEach(function(librarian){ %>
+            <div class="col-md-3 col-sm-6">
+                <div class="thumbnail">
+                   <img src="<%= librarian.image %>" >
+                   <div class="caption">
+                       <h4><%= librarian.name %></h4>
+                   </div>
+                   <p>
+                       <a href="/home/<%= librarian._id %>" class="btn btn-danger">Borrow</a> 
+                       <a href="/book/<%= librarian._id %>" class="btn btn-primary">More Info</a>
+                   </p>
+            </div>
+            </div>
+        <% }); %>
+    </div>
+
+<%include partials/footer%>

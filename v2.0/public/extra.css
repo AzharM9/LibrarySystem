@@ -1,0 +1,37 @@
+/* Manual Styling */
+.navbar-side {
+  list-style-type: none;
+  margin: 0;
+  padding-top: 4%;
+  width: 12.5%;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+}
+
+.navbar-side > li > a {
+  display: block;
+  color: #777;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+.navbar-side a:hover {
+  color: #e7e7e7;
+}
+
+.detail{
+  padding: 5%;
+}
+
+.dropdown-menu > li > a{
+  color: #e7e7e7; 
+}
+
+#delete-form{
+  display: inline;
+}
+
+.add-review{
+  text-align: center;
+}

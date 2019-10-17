@@ -1,0 +1,19 @@
+<%include ../partials/header%>
+
+<h1 class="add-review">Add New Review to <%= librarian.name %></h1>
+<div style="width: 30%; margin: 25px auto">
+        <form action="/book/<%= librarian._id %>/reviews" method="POST">
+            <div class="form-group">
+                <label>Reviews</label>
+                <input type="text" class="form-control" name="review[text]" placeholder="Your reviews">
+            </div>
+            <div class="form-group">
+                <label>Author</label>
+                <input type="text" class="form-control" name="review[author]" placeholder="Author's Name">
+            </div>
+            
+                <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+    </div>
+
+<%include ../partials/footer%>

@@ -1,0 +1,32 @@
+<%include ../partials/adminPanel%>
+
+<div class="detail container">
+    <div class="panel panel-default">
+        <div class="panel-heading"><h3>Book List</h3></div>
+            <div class="panel-body">
+                <a class="btn btn-primary btn-md" href="/book/new" role="button">Add New Book</a>
+            </div>
+                <table class="table">
+                        <tr>
+                                <th>No.</th>
+                                <th>Book Name</th>
+                                <th>More Info</th>
+                                <th>Delete</th>
+                        </tr>
+                        <% i = 1%>
+                    <% librarians.forEach(function(librarian){%>
+                        <tr>
+                            <td><%= i++%></td>
+                            <td><%= librarian.name %></td>  
+                            <td><a href="/book/<%= librarian._id %>" class="btn btn-primary btn-sm">More Info</a></td>
+                            <td>
+                                <form id="delete-form" action="/book/<%= librarian._id %>?_method=DELETE" method="POST">
+                                    <button class="btn btn-danger btn-sm">Delete</button>
+                                </form>
+                            </td>
+                        </tr>    
+                    <% }); %>
+                </table>
+    </div>
+  </div>
+<%include ../partials/footer%>

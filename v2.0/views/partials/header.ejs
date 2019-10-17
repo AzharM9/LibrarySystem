@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Librarian</title>
+    <link rel="stylesheet" type="text/css" href="/bootstrap.min.css">
+    <link rel="stylesheet" href="/extra.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-inverse">
+                <div class="container">
+                    <div class="navbar-header">
+                        <a href="/book" class="navbar-brand">Librarian</a>
+                    </div>
+                    <% if(!currentUser){ %>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="/login">Login</a></li>
+                            <li><a href="/register/new">Sign Up</a></li>
+                        </ul>
+                        <% } else { %>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="dropdown">
+                              <a href="#" 
+                              class="dropdown-toggle" 
+                              data-toggle="dropdown" 
+                              role="button" 
+                              aria-haspopup="true" 
+                              aria-expanded="false"
+                              ><%= currentUser.username %> 
+                              <span class="caret"></span>
+                            </a>
+                              <ul class="dropdown-menu navbar-inverse">
+                                <li><a href="/admin/bookList" >Admin Menu</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="/logout" >Logout</a></li>
+                              </ul>
+                            </li>
+                          </ul>
+                          <% } %>
+                </div>
+    </nav>
